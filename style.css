@@ -1,50 +1,80 @@
-/*
-	Comment
-*/
-
-a { /* Comment */ color: /* Comment */ Red; }
-
-.TestClass {
-	color: Black;
-	background-color: White;
-	text-align: left;
+@font-face {
+  font-family: jaapokki-regular;
+  src: url(fonts/jaapokki-regular.ttf);
 }
+
 body {
-  font-family: Georgia;
-  font-size: 16px;
-  margin: 0 auto;   /* center content */
-  max-width: 800px; /* limit width */
-  line-height: 1.5;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-/* BEGIN (write your solution here) */
-p {
-    margin-bottom:12px;
+.title {
+  font-family: jaapokki-regular;
+  text-align: center;
 }
-h1,h2,h3 {
-    font-weight:400;
-    margin-bottom:0;
+
+.header h1, .header p {
+  text-align: center;
 }
-h1 {
-    font-size:36px;
-	color:blue;
+
+.menu {
+  display: flex;
+  justify-content: space-around;
 }
-h2 {
-    font-size:32px;
-    border-bottom:1px solid grey;
-    margin-bottom:8px;
+
+.menu__item {
+  height: 100px;
+  width: 300px;
+  background-image: red;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  overflow: hidden;
+  text-align: center;
 }
-h3 {
-    font-size:20px;
+.menu__item a {
+  position: relative;
+  height: 50px;
+  width: 100px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  top: -200px;
+  transition: 0.3s ease;
+  font-family: jaapokki-regular;
+  color: #fff;
 }
-#header {
-    margin-bottom:32px;
-    text-align:center;
+.menu__item:hover {
+  background: rgba(0, 0, 0, 0.1);
+  }
+.menu__item:hover a {
+  top: 40%;
 }
-#footer {
-    margin-top:64px;
-    text-align:center;
+.description {
+  background-color: #f1f2f1;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-/* END */
+.description__item {
+  width: 27%;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+footer {
+  text-align: center;
+}
+footer h6 {
+  display: block;
+  font-size: 1em;
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+  font-weight: bold;
+}
