@@ -1,0 +1,22 @@
+.header {
+	margin: 100px auto;
+}
+
+.header h1 {
+	font-family: $font-headers;
+	line-height: 1.3em;
+	padding-bottom: 20px;
+	font-size: 40px;
+	font-weight: 400;
+	color: #333333;
+}
+
+.header p {
+	font-family: $font-text;
+	color: #888;
+    font-weight: bold;
+}
+
+.header h1, .header p {
+	text-align: center;
+}
