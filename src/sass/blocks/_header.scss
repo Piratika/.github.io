@@ -1,5 +1,6 @@
 .header {
 	margin: 100px auto;
+	transition: 0.3s ease;
 }
 
 .header h1 {
@@ -19,4 +20,10 @@
 
 .header h1, .header p {
 	text-align: center;
+}
+
+@media screen and (max-width : 450px) {
+	.header {
+		margin: 50px auto;
+	}
 }

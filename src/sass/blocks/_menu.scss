@@ -23,7 +23,7 @@
 	.menu__item-img {
 		height: 100%;
 		box-sizing: border-box;
-		border: 2px solid #000;
+		border: 3px solid #000;
 		overflow: hidden;
 		text-align: center;
 		transition: 0.1s ease;
@@ -37,6 +37,8 @@
 			border: 2px solid #fff;
 			top: -200px;
 			font-family: $font-headers;
+			font-size: 12px;
+			letter-spacing: 1.2px;
 			color: #fff;
 			padding: 12px 20px 10px;
 			transition: 0.3s ease;
@@ -72,7 +74,8 @@
 /*different backgrounds image for menu*/
 .menu__item {
     &:nth-child(1) .menu__item-img {
-        background-image: url(images/business.jpg);
+		background-image: url(images/business.jpg);
+		border-color: #e66a55;
     }
     &:nth-child(2) .menu__item-img {
         background-image: url(images/sample-page.jpg);
@@ -82,8 +85,16 @@
     }
 }
 
-@media screen and (max-width : 1000px) {
+@media screen and (max-width : 750px) {
     .menu {
-        flex-flow: column;
+		flex-flow: column;
+		.menu__item {
+			margin: 10px auto 50px;
+			max-width: 410px;
+			width: 100%;
+			&:nth-child(1) {
+				max-width: 550px;
+			}
+		}
     }
 }

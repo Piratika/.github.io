@@ -50,3 +50,14 @@
         }
     }
 }
+
+
+@media screen and (max-width : 750px) {
+    .description {
+		flex-flow: column;
+		.description__item {
+			width: 100%;
+			margin: 10px auto;
+		}
+    }
+}
