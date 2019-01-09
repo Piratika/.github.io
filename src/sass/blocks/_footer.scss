@@ -1,14 +1,43 @@
-footer {
-	text-align: center;
-	margin: 100px 0 50px 0;
+.footer {
+    clear: both;
+    font-family: $font-headers;
+    background: #35373e;
+    color: #cfd1db;
+    padding-top: 65px;
+    text-align: center;
+    .container-footer p {
+        font-size: 13px;
+        font-family: $font-text;
+        color: #cfd1db;
+        max-width: 550px;
+        margin: 20px auto 45px;
+        line-height: 22px;
+        letter-spacing: 0;
+    }
 }
-footer h6 {
-	font-family: $font-headers;
-	display: block;
-	font-size: 14px;
-	font-weight: 500;
-	margin-top: 2.33em;
-	margin-bottom: 2.33em;
-	line-height: 1.3em;
-    color: #333333;
+
+.footer_nav {
+    padding: 22px 0 18px;
+    background: #2f3138;
+}
+
+.footer_nav_item {
+    display: inline-block;
+    a {
+        margin: 0 12px;
+        color: #cfd1db;
+        transition: color 0.2s linear;
+        font-size: 11px;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .footer_nav {
+        display: none;
+    }
+    .footer {
+        padding-bottom: 1px;
+    }
 }

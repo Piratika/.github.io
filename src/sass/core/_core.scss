@@ -1,2 +1,67 @@
 @import "_reset";
 @import "_fonts";
+@import "_animation";
+
+@mixin input-prop() {
+    outline: none;
+    background: #eeeef0;
+    padding: 16px 19px;
+    color: #acafba;
+    font-family: $font-text;
+    font-size: 13px;
+    display: inline-block;
+    border: none;
+    font-weight: 400;
+    width: 100%;
+    line-height: 1.8;
+}
+
+@mixin page_link() {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    & > h2 {
+        font-size: 40px;
+        font-family: $font-headers;
+        line-height: 1.3em;
+        color: #333333;
+        font-weight: 500;
+        margin: 20px auto 23px;
+        letter-spacing: 10px;
+    }
+    & > p {
+        max-width: 560px;
+        color: #8b989b;
+        font-size: 16px;
+        margin: 0 auto 35px;
+        line-height: 1.7;
+        padding: 0 15px 80px;
+        font-family: $font-text;
+        letter-spacing: 0;
+    }
+}
+
+.frame-block {
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+    .frame-block {
+        width: 1170px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .frame-block {
+        width: 970px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .frame-block {
+        width: 750px;
+    }
+}
+@media screen and (max-width : 768px) {
+    .frame-block {
+        width: auto;
+    }
+}

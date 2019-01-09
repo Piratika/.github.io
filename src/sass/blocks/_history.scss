@@ -1,0 +1,35 @@
+#history {
+    @include page_link();
+    & > p {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.history {
+    border-bottom: 1px solid #ccc;
+    clear: both;
+    .container {
+        width: 100%;
+        height: auto;
+        cursor: ew-resize;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        direction: ltr;
+        backface-visibility: hidden;
+        z-index: 1;
+        height: inherit !important;
+        .swiper {
+            position: relative;
+            padding-left: 320px;
+            padding-right: 320px;
+            width: 1926px;
+            transition-duration: 0.3s;
+            transform: translate3d(-321px, 0px, 0px);
+            .swiper-slide {
+                width: 321px;
+            }
+        }
+    }
+}

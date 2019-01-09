@@ -1,0 +1,92 @@
+#contact {
+    @include page_link();
+    iframe {
+        height: 400px;
+        width: 100%;
+    }
+} 
+
+.contact {
+    display: flex;
+    height: 550px;
+    line-height: inherit;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.contact_info {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 33%;
+    font-family: $font-text;
+    letter-spacing: 1px;
+    a {
+        color: #e66a55;
+    }
+    h5 {
+        font-family: $font-headers;
+        font-weight: 500;
+        line-height: 1.3em;
+        font-size: 13px;
+        margin-bottom: 25px;
+        color: #333;
+        margin-top: 50px;
+    }
+    p {
+        color: #acafba;
+        line-height: 24px;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    h5:nth-of-type(1) {
+        margin-top: 10px;
+    }
+}
+
+.contact_form form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact_form form {
+    div:not(:last-of-type) {
+        width: 50%;
+    }
+    div:last-of-type {
+        width: 100%;
+    }
+    div {
+        padding: 0 15px 30px;
+        input {
+            @include input-prop();
+        }
+        textarea {
+            @include input-prop();
+        }
+    }
+    .submit-button {
+        display: block;
+        letter-spacing: 2px;
+        font-family: $font-headers;
+        font-size: 13px;
+        color: #acafba;
+        text-transform: uppercase;
+        background: none;
+        border: none;
+        margin: 0 auto 30px;
+        cursor: pointer;
+        i {
+            position: relative;
+            right: 0;
+            transition: right 0.3s linear;
+        }
+        &:hover {
+            i {
+                right: -10px;
+            }
+        }
+    }
+}

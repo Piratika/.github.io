@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>The Business – Powerful One Page Biz Theme</title>
+    <link href="main.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+        jQuery(function($) {
+	        $(window).scroll(function(){
+	            if($(this).scrollTop()>15){
+	                $('.header').attr('style','background:#191919')
+	            }
+	            else if ($(this).scrollTop()<15){
+	                $('.header').attr('style','background:transparent')
+	            }
+	        });
+	    });
+        jQuery(function($) {
+            if(document.getElementById('slider_home_id1').checked) {
+	            $('.slider_home').attr('style','background-image: url(images/top_bg.jpg)');
+                return;
+	        }
+            if(document.getElementById('slider_home_id2').checked) {
+	            $('.slider_home').attr('style','background-image: url(images/slide_bg2.jpg)');
+                return;
+	        }
+            if(document.getElementById('slider_home_id3').checked) {
+	            $('.slider_home').attr('style','background-image: url(images/slide_bg3.jpg)');
+                return;
+	        }
+            if(document.getElementById('slider_home_id4').checked) {
+	            $('.slider_home').attr('style','background-image: url(images/slide_bg4.jpg)');
+                return;
+	        }
+	    });
+        jQuery(function($) {
+            $('.slider_nav ul').on('click', '.slider_nav_item', function() {
+		        $(".slider_item:eq(" + $(this).parent().index() + ")").addClass("active");
+		        $(".slider_item:not(:eq(" + $(this).parent().index() + "))").removeClass("active");
+                return;
+	        });
+        });
+        $(function() {
+            var headerHeight = $('header').height();
+            $('li a').click(function (e) {
+                e.preventDefault();
+                var target = $(this.hash);
+                $('html, body').animate({
+                    scrollTop: target.offset().top - headerHeight
+                }, 1000);
+                return false;
+            });
+        });
+        $(document).ready(function() {
+            $('a[href=#top]').click(function(){
+                $('html, body').animate({scrollTop:0});
+                return false;
+            });
+        });
+        $(window).scroll(function(){
+            if ( $('#service').offset().top - 70 > $(this).scrollTop() ) {
+                $('a[href=#top]').addClass('active');
+            } else $('a[href=#top]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#service').offset().top - 70 < $(this).scrollTop() & $(this).scrollTop() < $('#proc').offset().top ) {
+                $('a[href=#service]').addClass('active');
+            } else $('a[href=#service]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#history').offset().top - 70 < $(this).scrollTop() & $(this).scrollTop() < $('#project').offset().top ) {
+                $('a[href=#proc]').addClass('active');
+            } else $('a[href=#proc]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#proc').offset().top - 70 < $(this).scrollTop() & $(this).scrollTop() < $('#team').offset().top ) {
+                $('a[href=#project]').addClass('active');
+            } else $('a[href=#project]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#project').offset().top - 70 < $(this).scrollTop() & $(this).scrollTop() < $('#prices').offset().top ) {
+                $('a[href=#team]').addClass('active');
+            } else $('a[href=#team]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#team').offset().top - 70 < $(this).scrollTop() & $(this).scrollTop() < $('#skills').offset().top ) {
+                $('a[href=#prices]').addClass('active');
+            } else $('a[href=#prices]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#prices').offset().top - 70 < $(this).scrollTop() & $(this).scrollTop() < $('#blog').offset().top ) {
+                $('a[href=#skills]').addClass('active');
+            } else $('a[href=#skills]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#blog').offset().top - 70 < $(this).scrollTop() & $(this).scrollTop() < $('#contact').offset().top ) {
+                $('a[href=#blog]').addClass('active');
+            } else $('a[href=#blog]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $('#contact').offset().top - 70 < $(this).scrollTop() ) {
+                $('a[href=#contact]').addClass('active');
+            } else $('a[href=#contact]').removeClass('active');
+        });
+        $(window).scroll(function(){
+            if ( $(this).scrollTop() > $('#skills').offset().top - 200 ) {
+                $('.fluid_animated_container').addClass('animation');
+                return false;
+            }
+        });
+        $(document).ready(function(){
+	        $(".menu-button").click(function(){
+		        $(".menu-button").toggleClass("active"); return false;
+	        });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="top"></div>
+    <header class="header">
+        <div class="header-container">
+            <div id="logo">
+                <a href="#"><img src="images/logo.png"></a>
+            </div>
+            <div class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li class="nav_item"><a href="#top">Home</a></li>
+                    <li class="nav_item"><a href="#service">Services</a></li>
+                    <li class="nav_item"><a href="#history">History</a></li>
+                    <li class="nav_item"><a href="#proc">Work Process</a></li>
+                    <li class="nav_item"><a href="#project">Projects</a></li>
+                    <li class="nav_item"><a href="#team">Team</a></li>
+                    <li class="nav_item"><a href="#prices">Prices</a></li>
+                    <li class="nav_item"><a href="#skills">Skills</a></li>
+                    <li class="nav_item"><a href="#blog">Blog</a></li>
+                    <li class="nav_item"><a href="#contact">Contact</a></li>
+             </ul>            
+            </nav>
+        </div>
+    </header>
+
+    <div class="slider_home">
+        <div class="frame-block">
+            <input type="radio" name="slide_switch-home" id="slider_home_id1" checked/>
+            <label for="slider_home_id1">
+                <img src="images/icon_1.png" alt="icon">
+                <h3>ABOUT US</h3>
+            </label>
+            <div class="slider_home_item">
+                <div class="slider_home_item_container">
+                    <div class="slider_home_item_title">
+                        <span>ANALYSIS,</span>
+                        <br>
+                        <span>STRATEGY,</span>
+                        <br>
+                        <span>DEVELOPMENT</span>
+                    </div>
+                    <div class="slider_home_item_text">
+                        <p>Nulla facilisi. Mauris bibendum eros sapien, ut fringilla lectus lobortis placerat. Sed eu urna consectetur, maximus elit dapibus, pellentesque mauris. Suspendisse potenti. Proin egestas tortor vel nisi placerat mattis. Aliquam erat volutpat.</p>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="slide_switch-home" id="slider_home_id2"/>
+            <label for="slider_home_id2">
+                <img src="images/icon_2.png" alt="icon">
+                <h3>PHILOSOPHY</h3>
+            </label>
+            <div class="slider_home_item">
+                <div class="slider_home_item_container">
+                    <div class="slider_home_item_title">
+                        <span>EXPERIENCE,</span>
+                        <br>
+                        <span>DEVELOPING,</span>
+                        <br>
+                        <span>CREATIVE</span>
+                    </div>
+                    <div class="slider_home_item_text">
+                        <p>Nulla facilisi. Mauris bibendum eros sapien, ut fringilla lectus lobortis placerat. Sed eu urna consectetur, maximus elit dapibus, pellentesque mauris. Suspendisse potenti. Proin egestas tortor vel nisi placerat mattis. Aliquam erat volutpat.</p>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="slide_switch-home" id="slider_home_id3"/>
+            <label for="slider_home_id3">
+                <img src="images/icon_3.png" alt="icon">
+                <h3>PRINCIPLES</h3>
+            </label>
+            <div class="slider_home_item">
+                <div class="slider_home_item_container">
+                    <div class="slider_home_item_title">
+                        <span>DESIGN,</span>
+                        <br>
+                        <span>DISCUSS,</span>
+                        <br>
+                        <span>PRODUCTION</span>
+                    </div>
+                    <div class="slider_home_item_text">
+                        <p>Nulla facilisi. Mauris bibendum eros sapien, ut fringilla lectus lobortis placerat. Sed eu urna consectetur, maximus elit dapibus, pellentesque mauris. Suspendisse potenti. Proin egestas tortor vel nisi placerat mattis. Aliquam erat volutpat.</p>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="slide_switch-home" id="slider_home_id4"/>
+            <label for="slider_home_id4">
+                <img src="images/icon_4.png" alt="icon">
+                <h3>EXPERIENCE</h3>
+            </label>
+            <div class="slider_home_item">
+                <div class="slider_home_item_container">
+                    <div class="slider_home_item_title">
+                        <span>MARKETING,</span>
+                        <br>
+                        <span>SUPPORT,</span>
+                        <br>
+                        <span>CONCEPT</span>
+                    </div>
+                    <div class="slider_home_item_text">
+                    <p>Nulla facilisi. Mauris bibendum eros sapien, ut fringilla lectus lobortis placerat. Sed eu urna consectetur, maximus elit dapibus, pellentesque mauris. Suspendisse potenti. Proin egestas tortor vel nisi placerat mattis. Aliquam erat volutpat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div id="service">
+        <h2>OUR SERVICES</h2>
+        <p>Duis non condimentum nunc. Nunc quis turpis eu est tincidunt rutrum. Cras a purus quis sem tincidunt egestas vel id lacus.</p>
+        <div class="slider_service">
+            <input type="radio" name="slide_switch-service" id="slider_service_id1" checked/>
+            <label for="slider_service_id1">
+                <div><img src="images/serv_1.png" alt="serv"><h6>ANALYSIS</h6></div>
+            </label>
+            <div class="slider_service_item">
+                <div class="slider_service_item-container">
+                    <div class="slider_service_item-text">
+                        <div>
+                            <h4>ANALYSIS</h4>
+                            <p>Vestibulum vitae tellus nec dui dictum tempor. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nunc imperdiet luctus interdum. Duis non condimentum nunc.Proin placerat pharetra aliquam. Aliquam sit amet interdum nulla pellentesque nisl.</p>
+                            <a href="">READ MORE</a>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+                
+            <input type="radio" name="slide_switch-service" id="slider_service_id2"/>
+            <label for="slider_service_id2">
+                <div><img src="images/serv_2.png" alt="serv"><h6>STRATEGY</h6></div>
+            </label>
+            <div class="slider_service_item">
+                    <div class="slider_service_item-container">
+                        <div class="slider_service_item-text">
+                            <div>
+                                <h4>STRATEGY</h4>
+                                <p>Vestibulum vitae tellus nec dui dictum tempor. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nunc imperdiet luctus interdum. Duis non condimentum nunc.Proin placerat pharetra aliquam. Aliquam sit amet interdum nulla pellentesque nisl.</p>
+                                <a href="">READ MORE</a>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+                
+            <input type="radio" name="slide_switch-service" id="slider_service_id3"/>
+            <label for="slider_service_id3">
+                <div><img src="images/serv_3.png" alt="serv"><h6>SOCIAL MEDIA</h6></div>
+            </label>
+            <div class="slider_service_item">
+                <div class="slider_service_item-container">
+                    <div class="slider_service_item-text">
+                        <div>
+                            <h4>SOCIAL MEDIA</h4>
+                            <p>Vestibulum vitae tellus nec dui dictum tempor. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nunc imperdiet luctus interdum. Duis non condimentum nunc.Proin placerat pharetra aliquam. Aliquam sit amet interdum nulla pellentesque nisl.</p>
+                            <a href="">READ MORE</a>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+                
+            <input type="radio" name="slide_switch-service" id="slider_service_id4"/>
+            <label for="slider_service_id4">
+                <div><img src="images/serv_4.png" alt="serv"><h6>MARKETING</h6></div>
+            </label>
+            <div class="slider_service_item">
+                <div class="slider_service_item-container">
+                    <div class="slider_service_item-text">
+                        <div>
+                            <h4>MARKETING</h4>
+                            <p>Vestibulum vitae tellus nec dui dictum tempor. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nunc imperdiet luctus interdum. Duis non condimentum nunc.Proin placerat pharetra aliquam. Aliquam sit amet interdum nulla pellentesque nisl.</p>
+                            <a href="">READ MORE</a>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+                
+            <input type="radio" name="slide_switch-service" id="slider_service_id5"/>
+            <label for="slider_service_id5">
+                <div><img src="images/serv_5.png" alt="serv"><h6>DEVELOPMENT</h6></div>
+            </label>
+            <div class="slider_service_item">
+                <div class="slider_service_item-container">
+                    <div class="slider_service_item-text">
+                        <div>
+                            <h4>DEVELOPMENT</h4>
+                            <p>Vestibulum vitae tellus nec dui dictum tempor. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nunc imperdiet luctus interdum. Duis non condimentum nunc.Proin placerat pharetra aliquam. Aliquam sit amet interdum nulla pellentesque nisl.</p>
+                            <a href="">READ MORE</a>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+                
+            <input type="radio" name="slide_switch-service" id="slider_service_id6"/>
+            <label for="slider_service_id6">
+                <div><img src="images/serv_6.png" alt="serv"><h6>SUPPORT</h6></div>
+            </label>
+            <div class="slider_service_item">
+                <div class="slider_service_item-container">
+                    <div class="slider_service_item-text">
+                        <div>
+                            <h4>SUPPORT</h4>
+                            <p>Vestibulum vitae tellus nec dui dictum tempor. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nulla elit ex, viverra a eros ac, placerat vehicula dui. Nunc imperdiet luctus interdum. Duis non condimentum nunc.Proin placerat pharetra aliquam. Aliquam sit amet interdum nulla pellentesque nisl.</p>
+                            <a href="">READ MORE</a>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="history">
+        <h2>HISTORY</h2>
+        <p>Duis non condimentum nunc. Nunc quis turpis eu est tincidunt</p>
+        <p>rutrum. Cras a purus quis sem tincidunt egestas vel id lacus.</p>
+    </div>
+
+    <div class="history">
+        <div class="frame-block">
+            <div class="container">
+                <div class="swiper">
+                    <div class="swiper-slide"></div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="proc">
+        <h2>WORK PROCESS</h2>
+        <p>Duis non condimentum nunc. Nunc quis turpis eu est tincidunt rutrum.</p>
+        <p>Cras a purus quis sem tincidunt egestas vel id lacus.</p>
+    </div>
+
+    <div class="proc frame-block">
+        <div class="slider_proc">
+            <input type="radio" name="slide_switch" id="slider_proc_id1" checked="checked"/>
+            <label for="slider_proc_id1">
+                <div>
+                    <img src="images/proc_1.png" alt="tab title">
+                    <h6>DISCUSS</h6>
+                    <div class="number"><p>1</p></div>
+                </div>
+            </label>
+            <div class="slider_proc_item">
+                <div class="slider_proc_item-container">
+                    <div>
+                        <p>Vestibulum facilisis rhoncus tempor. Duis non ipsum volutpat, rhoncus nisi sed, pulvinar ex. Nulla facilisi. Vestibulum in egestas purus.</p>
+                    </div>
+                    <div>
+                        <p>Etiam sit amet libero consequat, convallis odio ac, vestibulum urna. Sed tempor vulputate mi. Phasellus vel velit mauris.</p>
+                    </div>
+                    <div>
+                        <p>Sed condimentum, libero et faucibus tempus, urna arcu condimentum orci, at finibus enim tellus sed nunc. Nullam viverra massa interdum.</p>
+                    </div>
+                    <div>
+                        <p>Phasellus vel velit mauris. Nullam viverra massa ut euismod interdum. Sed feugiat suscipit tellus. Proin efficitur mi eget odio.</p>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="slide_switch" id="slider_proc_id2"/>
+            <label for="slider_proc_id2">
+                <div>
+                    <img src="images/proc_2.png" alt="tab title">
+                    <h6>PRODUCTION</h6>
+                    <div class="number"><p>2</p></div>
+                </div>
+            </label>
+            <div class="slider_proc_item">
+                <div class="slider_proc_item-container">
+                    <div>
+                        <p>Vestibulum facilisis rhoncus tempor. Duis non ipsum volutpat, rhoncus nisi sed, pulvinar ex. Nulla facilisi. Vestibulum in egestas purus.</p>
+                    </div>
+                    <div>
+                        <p>Etiam sit amet libero consequat, convallis odio ac, vestibulum urna. Sed tempor vulputate mi. Phasellus vel velit mauris.</p>
+                    </div>
+                    <div>
+                        <p>Sed condimentum, libero et faucibus tempus, urna arcu condimentum orci, at finibus enim tellus sed nunc. Nullam viverra massa interdum.</p>
+                    </div>
+                    <div>
+                        <p>Phasellus vel velit mauris. Nullam viverra massa ut euismod interdum. Sed feugiat suscipit tellus. Proin efficitur mi eget odio.</p>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="slide_switch" id="slider_proc_id3"/>
+            <label for="slider_proc_id3">
+                <div>
+                    <img src="images/proc_3.png" alt="tab title">
+                    <h6>CREATIVE CONCEPT</h6>
+                    <div class="number"><p>3</p></div>
+                </div>
+            </label>
+            <div class="slider_proc_item">
+                <div class="slider_proc_item-container">
+                    <div>
+                        <p>Etiam sit amet libero consequat, convallis odio ac, vestibulum urna. Sed tempor vulputate mi. Phasellus vel velit mauris.</p>
+                    </div>
+                    <div>
+                        <p>Phasellus vel velit mauris. Nullam viverra massa ut euismod interdum. Sed feugiat suscipit tellus. Proin efficitur mi eget odio.</p>
+                    </div>
+                    <div>
+                        <p>Vestibulum facilisis rhoncus tempor. Duis non ipsum volutpat, rhoncus nisi sed, pulvinar ex.</p>
+                    </div>
+                    <div>
+                        <p>Vestibulum facilisis rhoncus tempor. Duis non ipsum volutpat, rhoncus nisi sed, pulvinar ex. Nulla facilisi. Vestibulum in egestas purus.</p>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="slide_switch" id="slider_proc_id4"/>
+            <label for="slider_proc_id4">
+                <div>
+                    <img src="images/proc_4.png" alt="tab title">
+                    <h6>HAPPY CLIENT</h6>
+                    <div class="number"><p>4</p></div>
+                </div>
+            </label>
+            <div class="slider_proc_item">
+                <div class="slider_proc_item-container">
+                    <div>
+                        <p>Etiam sit amet libero consequat, convallis odio ac, vestibulum urna. Sed tempor vulputate mi. Phasellus vel velit mauris.</p>
+                    </div>
+                    <div>
+                        <p>Phasellus vel velit mauris. Nullam viverra massa ut euismod interdum. Sed feugiat suscipit tellus. Proin efficitur mi eget odio.</p>
+                    </div>
+                    <div>
+                        <p>Vestibulum facilisis rhoncus tempor. Duis non ipsum volutpat, rhoncus nisi sed, pulvinar ex.</p>
+                    </div>
+                    <div>
+                        <p>Vestibulum facilisis rhoncus tempor. Duis non ipsum volutpat, rhoncus nisi sed, pulvinar ex. Nulla facilisi. Vestibulum in egestas purus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project">
+        <div class="frame-block">
+            <h2>OUR PROJECTS</h2>
+            <p>Duis non condimentum nunc. Nunc quis turpis eu est tincidunt rutrum.</p>
+            <p>Cras a purus quis sem tincidunt egestas vel id lacus.</p>
+            <div class="proj-container">
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-item">
+                    <div>
+                        <img src="images/logo_hover1.jpg">
+                        <div class="proj-item-title">
+                            <h5>Leman inc.</h5>
+                            <p>support and branding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="team">
+        <h2>MEET WITH TEAM</h2>
+    </div>
+
+    <div id="prices">
+        <div class="prices-container frame-block">
+            <div class="prices-item prices-title">
+                <h2>OUR</h2><h2>PRICES</h2>
+                <p>Sed finibus nec orci et cursus. Vestibulum facilisis rhoncus tempor. Duis non ipsum volutpat, rhoncus nisi sed, pulvinar ex.</p>
+                <p>Nulla facilisi. Mauris bibendum eros sapien, ut fringilla lectus lobortis placerat. Sed eu urna consectetur, maximus elit dapibus, pellentesque mauris. Suspendisse potenti.</p>
+            </div>
+            <div class="prices-item prices-rang">
+                <h6>STARTER</h6>
+                <h3>$150.00</h3>
+                <p>per year</p>
+                <img src="images/price_11.png">
+                <p>
+                    <strong>No</strong> proin placerat phare
+                    <br>
+                    <strong>Yes</strong> aliquam sit amet inter
+                    <br>
+                    <strong>128Gb</strong> praesent pellen
+                    <br>
+                    <strong>Included</strong> tempor vulputate mi
+                    <br>
+                    <strong>No</strong> condimentum libero
+                </p>
+                <a href="">GET IT NOW <i class="fa fa-long-arrow-alt-right"></i></a>
+            </div>
+            <div class="prices-item prices-rang">
+                <h6>USER</h6>
+                <h3>$200.00</h3>
+                <p>per year</p>
+                <img src="images/price_21.png">
+                <p>
+                    <strong>No</strong> proin placerat phare
+                    <br>
+                    <strong>Yes</strong> aliquam sit amet inter
+                    <br>
+                    <strong>256Gb</strong> praesent pellen
+                    <br>
+                    <strong>Included</strong> tempor vulputate mi
+                    <br>
+                    <strong>No</strong> condimentum libero
+                </p>
+                <a href="">GET IT NOW <i class="fa fa-long-arrow-alt-right"></i></a>
+            </div>
+            <div class="prices-item prices-rang">
+                <h6>ADVANCED</h6>
+                <h3>$300.00</h3>
+                <p>per year</p>
+                <img src="images/price_31.png">
+                <p>
+                    <strong>No</strong> proin placerat phare
+                    <br>
+                    <strong>Yes</strong> aliquam sit amet inter
+                    <br>
+                    <strong>512Gb</strong> praesent pellen
+                    <br>
+                    <strong>Included</strong> tempor vulputate mi
+                    <br>
+                    <strong>No</strong> condimentum libero
+                </p>
+                <a href="">GET IT NOW <i class="fa fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills">
+        <div class="frame-block">
+            <div>
+                <h2>OUR BEST SKILLS</h2>
+                <p>Duis non condimentum nunc. Nunc quis turpis eu est tincidunt rutrum.</p>
+                <p>Cras a purus quis sem tincidunt egestas vel id lacus.</p>
+            </div>
+            <div class="fluid">
+                <div class="fluid_element">
+                    <div class="fluid_animated_container pr90"><div class="fluid_animated"></div><h3>90%</h3></div>
+                    <h5>DIGITAL MARKETING</h5>
+                    <p>Vestibulum facilisis rhoncus tempor.</p>
+                    <p>Duis non ipsum volutpat.</p>
+                </div>
+                <div class="fluid_element">
+                    <div class="fluid_animated_container pr85"><div class="fluid_animated"></div><h3>85%</h3></div>
+                    <h5>PROMO COMPANIES</h5>
+                    <p>Vestibulum facilisis rhoncus tempor.</p>
+                    <p>Duis non ipsum volutpat.</p>
+                </div>
+                <div class="fluid_element">
+                    <div class="fluid_animated_container pr78"><div class="fluid_animated"></div><h3>78%</h3></div>
+                    <h5>SOCIAL MEDIA</h5>
+                    <p>Vestibulum facilisis rhoncus tempor.</p>
+                    <p>Duis non ipsum volutpat.</p>
+                </div>
+                <div class="fluid_element">
+                    <div class="fluid_animated_container pr95"><div class="fluid_animated"></div><h3>95%</h3></div>
+                    <h5>CONTENT SUPPORT</h5>
+                    <p>Vestibulum facilisis rhoncus tempor.</p>
+                    <p>Duis non ipsum volutpat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blog">
+        <h2>FROM BLOG</h2>
+        <p>Duis non condimentum nunc. Nunc quis turpis eu est tincidunt rutrum. Cras a purus quis sem tincidunt egestas vel id lacus.</p>
+    </div>
+    
+    <div class="blog blog-homepage">
+        <div class="blog-posts">
+            <div class="post-item">
+                <a href=""><img src="images/blogging-336376_1280-360x270.jpg"></a>
+                <h5>APPROPR DISSEMINATE STANDARDS COMPLIANT QUALITY VECTORS.</h5>
+                <p>pudnaa | October 22 / 2015</p>
+                <a class="read-more" href="">READ MORE <i class="fa fa-long-arrow-alt-right"></i></a>
+            </div>
+            <div class="post-item">
+                <a href=""><img src="images/blog_2-360x270.jpg"></a>
+                <h5>DRAMATICALLY SIMPLIFY LOW RISK CATALYSTS FOR CHANGE RESOURCE.</h5>
+                <p>pudnaa | October 22 / 2015</p>
+                <a class="read-more" href="">READ MORE <i class="fa fa-long-arrow-alt-right"></i></a>
+            </div>
+            <div class="post-item">
+                <a href=""><img src="images/blog_1-360x270.jpg"></a>
+                <h5>PELLENTESQUE ET LACINIA EROS, CONDIM ENTUM HENDRERIT NISL.</h5>
+                <p>pudnaa | October 22 / 2015</p>
+                <a class="read-more" href="">READ MORE <i class="fa fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <h2>HOW FIND US</h2>
+        <p>Duis non condimentum nunc. Nunc quis turpis eu est tincidunt rutrum. Cras a purus quis sem tincidunt egestas vel id lacus.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35615.02514072023!2d-79.39752380232078!3d43.65470431446623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM5JzExLjYiTiA3OcKwMjInNTkuNSJX!5e0!3m2!1sru!2sby!4v1546884543980" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <div class="contact">
+        <div class="contact_info">
+            <h5>ADDRESS</h5>
+            <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+            <h5>CALL US</h5>
+            <p><a href="tel:+485558960568188">+48 555 896 0568 188</a></p>
+            <h5>EMAIL</h5>
+            <p><a href="mailto:clients@simplissimo.com">clients@simplissimo.com</a></p>
+        </div>
+        <div class="contact_form">
+            <form action="" method="post">
+                <div><input type="text" name="your-name" value="" class="" aria-required="true" aria-invalid="false" placeholder="Your name"></div><!--
+             --><div><input type="text" name="your-email" value="" class="" aria-required="true" aria-invalid="false" placeholder="Your email"></div><!--
+             --><div><input type="text" name="your-subject" value="" class="" aria-required="true" aria-invalid="false" placeholder="Subject"></div><!--
+             --><div><input type="text" name="your-tel" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="Contact phone"></div>
+                <div><textarea name="your-message" cols="40" rows="10" class="" aria-invalid="false" placeholder="Message"></textarea></div>
+                <button type="submit" value="submit" class="submit-button">Submit <i class="fa fa-long-arrow-alt-right"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <img src="images/footer-logo.png" alt="logo">
+            <p>Maecenas vitae venenatis lorem. Pellentesque et lacinia eros, condimentum hendrerit nisl. In iaculis a nunc a euismod. Phasellus aliquam sagittis congue.</p>
+        </div>
+        <nav class="footer_nav">
+            <ul>
+                <li class="footer_nav_item"><a href="index.html">Welcome</a></li>
+                <li class="footer_nav_item"><a href="">Home Page</a></li>
+                <li class="footer_nav_item"><a href="">Sample Page</a></li>
+                <li class="footer_nav_item"><a href="blog.html">Blog Page</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
