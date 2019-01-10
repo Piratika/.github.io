@@ -2,7 +2,6 @@
     padding: 120px 0;
     font-family: $font-headers;
     .blog-posts {
-        width: 1170px;
         margin: 0 auto 0;
         display: flex;
         align-content: space-around;
@@ -77,5 +76,11 @@
     .blog {
         padding-left: 20px;
         padding-right: 20px;
+    }
+}
+
+@media screen and (min-width : 1170px) {
+    .blog-posts {
+        width: 1170px;
     }
 }
